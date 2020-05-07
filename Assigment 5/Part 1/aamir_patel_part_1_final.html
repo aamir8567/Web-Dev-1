@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Assigment 5 part 1</title>
+    <style>
+        .changefont {
+            font-family: Arial;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>This is a Test Page</h1>
+    <h2>For Acres to SquareYards</h2>
+    <p>
+        Enter Acres: <input type="text" id="txtAcres">
+        <input type="button" value="Convert to Square Yards!!" id="btnConvert" onclick="convertAcres();">
+    </p>
+    <div id="results" class= "changefont">
+    </div> <!-- End of results div -->
+
+    <script>
+        function convertAcres() {
+            var Acres = document.getElementById("txtAcres").value;
+            var Calculation;
+            var Results;
+            Calculation = Acres * 4840;
+            Result = ("Your Total Square yards are -->" + Calculation);
+
+            document.getElementById("results").innerHTML = Result;
+        }
+    </script>
+</body></html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <link rel="stylesheet" href="assigmnet6.css">
+    <meta charset='utf-8'>
+    <title>Assigment 6</title>
+
+<body>
+    <h1 class="format-title">Web Calculator</h1>
+    <h2>Aamir Patel</h2>
+    <p> Enter First Number --> <input type="text" id="txtNum1"><br><br>
+        Enter Second Number --> <input type="text" id="txtNum2"><br><br>
+        Enter Third Number --> <input type="text" id="txtNum3"><br><br>
+    </p>
+
+    <input type="button" id="btnAdd" value="Add the Numbers" onclick="ADDNUM();">
+    <input type="button" id="btnMultiply" value="Multiply the Numbers" onclick="MULTIPLYNUM();">
+        <br><br>
+    
+    <div id="TotAdd">
+    </div> <!-- End div TotAdd -->
+        <br>
+    
+    <div id="TotMultiply">
+    </div><!-- End div TotMultiply -->
+
+    <script>
+        function ADDNUM() {
+            var number1 = document.getElementById("txtNum1").value;
+            var number2 = document.getElementById("txtNum2").value;
+            var number3 = document.getElementById("txtNum3").value;
+            var total;
+            var output;
+        //parsing input
+            number1 = parseInt(number1);
+            number2 = parseInt(number2);
+            number3 = parseInt(number3);
+        //calculation
+            total = number1 + number2 + number3;
+            output = ("The Sum of " + number1 + ", " + number2 + ", and " + number3 + " is --> " + total);
+        //output
+            document.getElementById("TotAdd").innerHTML = output;
+        };
+
+        function MULTIPLYNUM() {
+            var number1 = document.getElementById("txtNum1").value;
+            var number2 = document.getElementById("txtNum2").value;
+            var number3 = document.getElementById("txtNum3").value;
+            var total;
+            var output;
+        //Parsing of input
+            number1 = parseInt(number1);
+            number2 = parseInt(number2);
+            number3 = parseInt(number3);
+        //calculation
+            total = number1 * number2 * number3;
+            output = ("The Product of " + number1 + ", " + number2 + ", and " + number3 + " is --> " + total);
+         //output
+            document.getElementById("TotMultiply").innerHTML = output;
+        };
+
+    </script>
+</body>
+    <!-- It is important to use the parse function in this scenario, because when the user enters the values they input as a string, but to calculate them we need numbers. Therefore we use parseint to convert the strings into numbers. -->
+    
+    <!-- In this scenario it would be optimal if you use parseFloat, because the user might input a number with decimal value, so we have to be precautious and use parseFloat. However I used parseInt in this assigment, because i just wanted to get an understanding of the concept of parse, and parseInt did just that.-->
+
+    <!-- You should not upload any ZIP files to a webservers, because the webservers do not know how to wory with zip files. -->
+</html>

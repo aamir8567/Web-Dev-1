@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="eng">
+
+<head>
+    <link rel="stylesheet" href="external_style_sheet.css">
+    <meta charset="utf-8">
+    <title>Aamir's Coffee Shop</title>
+</head>
+
+<body>
+    <h1>Aamir's Coffee Shop</h1>
+    <img src="coffe_shop_pic_1.jpg" width="360" height="200">
+    <br><br>
+    <label for="selCoffeeType">What kind of coffee would you like?</label>
+    <select id0="selCoffeeType">
+        <option value="cof">Coffee</option>
+        <option value="lat">Latte</option>
+        <option value="cap">Cappuchino</option>
+    </select>
+
+    <p>
+        Drink Size: <br>
+        Small: <input type="radio" id="radSmall" name="DrinkSize">
+        Medium: <input type="radio" id="radMedium" name="DrinkSize">
+        Large: <input type="radio" id="radLarge" name="DrinkSize" checked="checked">
+    </p>
+
+    <p>
+        Drink Type:
+        Regular: <input type="checkbox" id="chkRegular">
+        Decaf: <input type="checkbox" id="chkDecaf">
+    </p>
+
+    <p>
+        Please Enter your Email Address: <input type="text" id="txtEmail"> <br>
+        Yes, Add me to your mailing list <input type="checkbox" id="chkYesMailingList" checked="checked"> <br>
+        No, Do not add me to your mailing list! <input type="checkbox" id="chkNoMailingList">
+    </p>
+
+    <p>
+        <input type="button" id="btnOrderCoffee" value="Order My Coffee.">
+    </p>
+
+</body>

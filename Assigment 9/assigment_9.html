@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" href="Styles.css">
+    <title>Assigment 9</title>
+</head>
+
+<body class="change-body">
+    <span style="text-align: center;">
+    <h1>Aamir Patel</h1>
+    <h1>Assigment 9</h1>
+    <h2>Simple Coffee Order</h2>
+    </span>
+    <form id="Coffee" class ="change-form">
+        <p>
+<!--Size -->            
+            <span class="change-option">Size: </span> <select id="selSize">
+                <option value="Small">Small</option>
+                <option value="Medium">Medium</option>
+                <option value="Large">Large</option>
+            </select>
+<!--Milk -->
+            <br><span class="change-option"> Milk Options: </span>
+            <label for="radWhole">Whole:</label>
+            <input type="radio" id="radWhole" name="MilkType">
+            <label for="radSkim">Skim:</label>
+            <input type="radio" id="radSkim" name="MilkType">
+            <label for="rad2Per">2%:</label>
+            <input type="radio" id="rad2Per" name="MilkType">
+            <label for="radSoy">Soy:</label>
+            <input type="radio" id="radSoy" name="MilkType" value="1">
+<!--Coffee Type -->
+            <br> <span class="change-option">Coffee Type: </span>
+            <label for="radReg">Regular:</label>
+            <input type="radio" id="radReg" name="CoffeeType" checked="checked">
+            <label for="radDec">Decaf:</label>
+            <input type="radio" id="radDec" name="CoffeeType"><br>
+<!--Turbo Shot -->
+            <label for="radExtraShot"><span class="change-option">Add Extra Shot: </span></label>
+            <input type="checkbox" id="radExtraShot">
+        </p></form>
+   <p>
+    <span style="margin-left:40%"> 
+        <button id="btnCalculate" onclick="Total();">Calculate</button> 
+    </span>
+    
+    <div id="divResults" class="output-result">
+    </div><!--End of Results DIV -->
+
+    <script>
+        function Total() {
+            var type, size, milk, extshot, calculate, outputString;
+            var total = 0;
+            outputString = "Your order of a ";
+//SIZE
+            size = document.getElementById('selSize').value;
+            if (size == "Small") {
+                total = total + 3;
+                outputString = (outputString + "small, ");
+            } else if (size == "Medium") {
+                total = total + 3.50;
+                outputString=(outputString + "medium, ");
+            } else if (size == "Large") {
+                total = total + 4;
+                outputString=(outputString+"large, ");
+            }
+//TYPE            
+            if (document.getElementById('radReg').checked) {
+                type = "Regular";
+                outputString = (outputString + "regular coffee,");
+            } else if (document.getElementById('radDec').checked) {
+                type = "Decaf";
+                outputString = (outputString + "Decaf coffee,");
+            }
+
+//MILK TYPE 
+            if(document.getElementById('radWhole').checked){
+                outputString = (outputString + " with Whole Milk, ");
+            } else if(document.getElementById('radSkim').checked){ 
+                outputString = (outputString + " with Skim Milk, ");   
+            }else if(document.getElementById('rad2Per').checked){
+                 outputString = (outputString + " with 2% Milk, ");
+            }
+            else if (document.getElementById('radSoy').checked) {
+                total = total + 1;
+                 outputString = (outputString + " with Soy Milk, ");
+            }
+//ExtraShot            
+            if (document.getElementById('radExtraShot').checked) {
+                total = total + 0.75;
+                outputString=(outputString + "and an extra shot of espresso is placed.")
+            }else{
+                outputString = (outputString+"is placed.");
+            }
+//TOTAL
+            total = total.toFixed(2);
+            outputString= (outputString + " <br> The total for your order is $" + total);
+            document.getElementById('divResults').innerHTML = outputString;
+        } // End of Function
+
+    </script>
+</body>
+
+</html>

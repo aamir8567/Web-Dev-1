@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Practice Page 2 </title>
+    <style>
+        .changefont {
+            font-family: Arial;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Assigment 5</h1>
+    <h1>part 1 </h1>
+    <p> How many acres would you like to convert?
+        <input type="text" id="txtacres">
+        <input type="button" id="btnCalculate" value="Convert to Square Yards" onclick="Calculate();">
+    </p>
+    <div id="results">
+    </div> <!-- end of results div -->
+
+    <script>
+        function Calculate() {
+            var acres = document.getElementById("txtacres").value;
+            var calculation;
+            var result;
+
+            calculation = acres * 4840;
+            result = ("Your total square yards is -->"
+                calculation)
+            alert(result);
+            document.getElementById("results").innerHTML = Result;
+
+        }
+    </script>
+</body></html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" href="styles.css">
+    <title>Aamir Patel Final Assigment</title>
+</head>
+
+<body class="change-body, borders">
+    <header class = "change-header ">
+        <h1>Aamir Patel</h1>
+        <h2>Final Assigment</h2>
+    </header>
+    <main>
+        Enter a String:
+        <input type="text" id="strinitial"> <br>
+        Select a Option:
+        <select id="selOption" onchange="printing();">
+            <option value="choose">Choose an Option</option>
+            <option value="optLenght">Print the Total String Length</option>
+            <option value="optDouble">Double the String</option>
+            <option value="optUpper">Print in Upper Case</option>
+        </select>
+        
+        <div id="divResult" class="change-result">
+            <br>
+        </div> <!-- End of result div -->
+
+    </main>
+    <script>
+        function printing() {
+            var initial, len, double, upper, base, output;
+            base = document.getElementById("strinitial").value;
+            initial = document.getElementById("selOption").value;
+
+            if (initial == "choose") {
+
+            } else if (initial == "optLenght") {
+                len = base;
+                len = ("The Length of your string is " + len.length);
+                output = len;
+            } else if (initial == "optDouble") {
+                double = (base + " | " + base);
+                output = double;
+            } else if (initial == "optUpper") {
+                upper = base.toUpperCase();
+                output = upper;
+            }
+
+            document.getElementById("divResult").innerHTML = output;
+        }
+    </script>
+</body></html>

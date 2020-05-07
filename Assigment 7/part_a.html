@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset='utf-8'>
+    <title>Assigment 7</title>
+</head>
+
+<body>
+    <header>
+        <p>
+        <h1>Assigment 7 <br>
+            Weight Converter </h1>
+        </p>
+    </header>
+    <main>
+        <p>Enter an amount in pounds:
+            <input type="text" id="txtPounds"></br>
+            Pick the weight to convert to:
+            <select id="selWeight">
+                <option value="kilogram">Kilograms</option>
+                <option value="ounce">Ounces</option>
+                <option value="stone">Stone</option>
+            </select>
+            <br> <br> <button type="button" id="btnConvert" onclick="Convert();">Convert</button>
+
+        </p>
+
+        <div id="divInitial">
+        </div> <!-- End of initial div -->
+        <div id="divResults">
+        </div> <!-- End of results div -->
+    </main>
+
+    <script>
+        function Convert() {
+            var pounds;
+            var calculation;
+            var choose;
+            var input;
+            
+            var output;
+            var styling;
+            
+            pounds = document.getElementById("txtPounds").value;
+            pounds = parseFloat(pounds);
+            pounds = pounds.toFixed(2);
+
+            input = ("<span style = 'color: #0000FF'>Pounds: " + pounds);
+            choose = document.getElementById("selWeight").value;
+
+            document.getElementById("divInitial").innerHTML = input;
+
+            if (choose == "kilogram") {
+                calculation = pounds * 0.454;
+                calculation = calculation.toFixed(2);
+                output = ("<span style = 'color: #0000FF'>Conversion Amount: " + calculation + " kilograms.");
+                document.getElementById("divResults").innerHTML = output;
+            } else if (choose == "ounce") {
+                calculation = pounds * 16;
+                // calculation = calculation.toFixed(2);
+                output = ("<span style = 'color: #0000FF'>Conversion Amount: " + calculation + " ounces.");
+                document.getElementById("divResults").innerHTML = output;
+            } else if (choose == "stone") {
+                calculation = pounds * 0.071;
+                calculation = calculation.toFixed(2);
+                output = ("<span style = 'color: #0000FF'>Conversion Amount: " + calculation + " stones.");
+                document.getElementById("divResults").innerHTML = output;
+            }
+        }
+
+    </script>
+</body>
+
+</html>

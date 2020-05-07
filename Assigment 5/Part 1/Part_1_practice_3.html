@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title> Practice 3 </title>
+    <style>
+        .chngfont {
+            font-family=Arial;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> This is a practice page 3 </h1>
+    <h1> Convert acres to square yards </h1>
+    <p> Enter Acres --> <input type="text" id="txtAcres">
+        <input type="button" value="Convert to Square Yards" id="btnConvert" onclick="CovertAcres();">
+    </p>
+    <div id="divResult">
+    </div> 
+    
+    <script>
+        function ConvertAcres() {
+            var Acres = document.getElementById("txtAcres").value;
+            var Calculate;
+            Calculate = Acres * 4840;
+            var Total;
+            Total = ("Your total Square Yards are --> " + Calculate);
+            alert("Total");
+            document.getElementById("divResult").innerHTML = Total;
+        }
+    </script>
+</body></html>

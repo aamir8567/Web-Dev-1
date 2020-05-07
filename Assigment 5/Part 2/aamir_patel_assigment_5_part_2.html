@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+    <meta charset="utf-8">
+    <title> Assigment 5 -- Part 2</title>
+    <link rel="Styles" href="part_2.css">
+    <style type="text/css">
+        .background {
+            background-color: #e7a64f;
+            font-weight: bold;
+            font-size: 150%;
+        }
+
+        .header {
+            color: #000002;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .main {
+            font-family: "Times New Roman", Times, serif;
+            color: #000033
+        }
+
+        .center {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body class="background center">
+    <header class="header">
+        <h1>Assigment 5</h1>
+        <h1>Part 2</h1>
+        <img src="circleCalculator.png" alt-"Calculator Image">
+    </header>
+
+    <main class="main">
+        <p>Please enter the radius--> <input type="text" id="txtRadius"> <br>
+            <input type="button" id="btnCalculate" value="Calculate" onclick="TotalCirf();"></p>
+        <div id="divResult"></div>
+    </main>
+
+    <script>
+        function TotalCirf() {
+            var radius = document.getElementById("txtRadius").value;
+            var Calculation = 2 * 3.14 * radius;
+            var Result = ("Your Circumference of the circle is --> " + Calculation);
+            document.getElementById("divResult").innerHTML = Result;
+        }
+    </script>
+</body></html>

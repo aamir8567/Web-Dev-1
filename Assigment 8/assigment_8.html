@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Vote Checker</title>
+    <style>
+        .form-style-classic {
+            width: 300px;
+            border: solid 2px #99ccff;
+            background-color: #ffcc99;
+            padding: 10px;
+        }
+
+        .results-output {
+            color: #0000ff;
+        }
+
+    </style>
+    <link rel = "stylesheet" type="text/css" href = "sheets.css" />
+</head>
+
+<body>
+    <h1 class ="change-color">Assigment 8</h1>
+    <h2 class ="change-color">Aamir Patel</h2>
+    <h2 class ="change-color">Vote Checker</h2>
+    <form id="voterInfo" class="form-style-classic + centre">
+        <p><label for="txtYear">What year were you born in?</label>
+            <input type="text" id="txtYear" siz="10">
+        </p>
+
+        <p><label for="txtRegistered">Are you registered to Vote?</label>
+            <select id="selRegistered">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="txtFelon">Are you a convicted Felon?</label>
+            <select id="selFelon">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </p>
+
+        <p> <label for="txtCitizen">Are you a Citizen?</label>
+            <select id="selCitizen">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </p>
+        <p>***
+            <button type="button" onclick="checkVoterEligibility();" style="background-color: #ffff99;">Can I Vote?</button>
+            ***</p>
+    </form>
+    <br>
+    <div id="voteResults" class="results=output + result">
+    </div> <!-- end of voteResults div -->
+
+    <script>
+        function checkVoterEligibility() {
+            var yearBorn, isFelon, isRegistered, isCitizen;
+            var resultString, calculateAge;
+            var year = new Date();
+            year = year.getFullYear();
+            
+            yearBorn = document.getElementById("txtYear").value;
+            yearBorn = parseInt(yearBorn);
+            
+            calculateAge = year - yearBorn;
+            
+            isRegistered = document.getElementById("selRegistered").value;
+            isCitizen = document.getElementById("selCitizen").value;
+            isFelon = document.getElementById("selFelon").value;
+
+            if(calculateAge >= 18 && isRegistered=="yes" && isFelon=="no" && isCitizen=="yes"){
+                resultString = "Congratualtions, You are elegible to vote!";
+            } // end IF.;
+            else {
+                resultString = "I'm sorry, you are not qualified to vote.";
+            }
+            document.getElementById("voteResults").innerHTML = resultString;
+           
+        } //end of function 
+
+    </script>
+
+</body>
